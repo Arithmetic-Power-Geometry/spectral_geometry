@@ -1,0 +1,8 @@
+# P72 — Exact Paper 2 replication and hostile novelty gate
+Date 2026-10-30. Executed /mnt/data/p72_spin_search.py, standard Python Fraction arithmetic.
+Energy E_b(m,n)=(m+Bn)^T G^{-1}(m+Bn)+n^TGn, B=b[[0,1],[-1,0]], spin s=m^T n.
+Exact involution m->-m maps E_b to E_-b and s to -s, proving all unrefined energy multiplicities equal for b and -b without a cutoff.
+Complete cutoff E<=5: diagonal G entries a,d in {2,3}, h in {0,1/3}, b in {1/5,1/3}, 16 tests. Positive lower bound G >=lambda I with lambda=min(a-|h|,d-|h|)>0; G^-1 >= (a+d)^-1 I, so |n|<=floor sqrt(L/lambda) and |m+Bn|<=sqrt(L(a+d)); m coordinate bound conservatively ceil(sqrt(L(a+d))+|b|N)+1. Exact enumeration and spin-involution checks pass.
+All 16 pairs have identical energy-only spectra through L=5; four have spin-refined discrepancies. For G=[[2,1/3],[1/3,3]] and b=1/5 first threshold 3313/1325, and b=1/3 first threshold 133/53; swapping a,d yields same thresholds. These reproduce the second paper, not a new result.
+The fact that only four tested pairs differ by L=5 is not evidence of full spin equality for the remaining pairs. The cutoff proof is exact for all observed states but the global first threshold would require an argument that no discrepancy occurs beyond L; for reported first thresholds <=5 the completeness argument suffices.
+Novelty kill: this is explicitly the already-proved Paper 2 phenomenon. No novel Paper 4 theorem. Next P73 search beyond sign reversal: distinct rational B and off-diagonal G not related by trivial involution; test genuine duality inequivalence first, then first spin-vs-energy separation and prior art.
