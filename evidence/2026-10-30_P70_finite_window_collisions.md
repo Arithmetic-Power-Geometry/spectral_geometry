@@ -1,0 +1,7 @@
+# P70 exact finite-window spectral collision audit
+2026-10-30. Executed standard-library Python with Fraction and integer sqrt; source papers/PAPER-04/code/p70_finite_window_collision.py.
+A,r in {1,4/3,3/2,2,3}, 25 parameter pairs, 15 canonical mirror-related representatives. T=iA,U=ir, G=diag(A/r,Ar), B=0. All charges with E<=L enumerated using proven coercivity box R=floor(sqrt(L/c)), c=min(A/r,Ar,r/A,1/(Ar)). Exact integer multiplicity counters for energy and energy+spin.
+Results L=1/4: 5 distinct signatures, 2 collision groups; L=1/2: 12 signatures, 1 collision group; L=1,2,4: 15 signatures and zero cross-canonical collision groups. At all five L, energy-only and energy+spin yield identical partition of the 15 representatives (no added discrimination from spin on this grid).
+Example L=1/2 collision group canonical (1,1),(1,4/3),(1,3/2),(4/3,4/3). At L=1 all are distinguished.
+Caution: orbit classification relies on the standard modular fundamental-domain action on purely imaginary moduli and mirror exchange, not a fully verified all-components O(2,2;Z) analysis. The absence of added spin separation is grid- and cutoff-specific, not universal. This finite-window collision is a basic expected phenomenon, not a new theorem; P56–P58 already considered analogous limitations.
+P71 next: derive exact first separating energy for each pair of the 15 canonical models using complete spectra and report threshold distribution; seek any spin-specific first separator. Run prior-art audit before any paper.
