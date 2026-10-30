@@ -1,0 +1,7 @@
+# P94 — Energy-cutoff unlabelled spectra, exact rational quantization
+Date 2026-10-30.
+Two inequivalent diagonal torus backgrounds G=diag(2,c), B=0, c=22/7 and c'=22/7+1/100000. Their imaginary tau/rho are strict fundamental-domain interior representatives with distinct unordered reduced pairs (P93).
+Exact energy E=m1²/2+m2²/c+2n1²+c*n2². Energy threshold E<=T is a physically meaningful, charge-coordinate-independent spectral selection; include all integer charges and multiplicities. For c in [3,4], E>=m1²/2+m2²/4+2n1²+3n2², which proves the finite enumeration bounds used in code cover ALL eligible charges. Quantization nearest multiple of q with exact Fraction arithmetic.
+Actually executed /mnt/data/p94.py: T=2 states 19; T=4 83; T=8 325; T=12 703; both backgrounds same state counts. At q=1/10,1/100,1/1000,1/10000 the rounded multisets agree for each T. At q=1/100000 the rounded multisets differ for each T. Exact unrounded multisets differ for each T. No random or floating approximations.
+CAVEAT: quantizing a spectrum is invariant under duality only when duality preserves energy and its multiplicity; here that is the physically intended unlabelled energy observable. Finite T and rounding bins can have boundary discontinuities; no global uniform continuity statement is claimed. A finite example does not prove an optimal height-dependent exponent, universal bound, or novelty.
+Next P95: rigorous lower and upper precision bounds with height H and spectral cutoff T, including boundary margins and prior-art audit. No manuscript, Paper 4 NO-GO.
