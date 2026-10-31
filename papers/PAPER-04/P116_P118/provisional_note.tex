@@ -1,0 +1,35 @@
+\documentclass{article}
+\usepackage{amsmath,amssymb,amsthm,hyperref}
+\newtheorem{proposition}{Proposition}
+\title{Exact Maximum-Likelihood Stabilizer Decoding under Pauli-Channel Uncertainty: Reproducible Small-Code Certificates and Their Limits}
+\author{Mohammad Amir Khusru Akhtar\\Usha Martin University, Ranchi, India}
+\date{Provisional computational note, November 2026}
+\begin{document}\maketitle
+\begin{abstract}We document exact-arithmetic small-code stabilizer ML decoding and uncertainty certificates, with explicit counterexamples to invalid vertex shortcuts. These are demonstrations of known probability and quantum coding principles, not a new decoding theorem or scalable algorithm.\end{abstract}
+\section{Introduction}
+Degenerate stabilizer maximum likelihood operates on logical cosets rather than individual physical errors. Cao et al.~\cite{cao} develop quantum enumerators via tensor networks; Molavi et al.~\cite{molavi} develop structured decoder analysis and polynomial error-rate robustness. Both directly constrain originality.
+\section{Definitions}
+For stabilizer group $S$, syndrome $s(E)$, and independent local Pauli channel probabilities $p_i(P)$, define
+\[
+M_{s,c}(\mathbf p)=\sum_{E:s(E)=s,\ ES=c}\prod_i p_i(E_i),
+\quad P_D=\sum_sM_{s,D(s)},\quad P_{\rm ML}=\sum_s\max_c M_{s,c}.
+\]
+These are standard formulas.
+\section{Five-qubit exact calculations}
+Use stabilizer generators $XZZXI$, $IXZZX$, $XIXZZ$, and $ZXIXZ$. Under iid Pauli probabilities $(p_I,p_X,p_Y,p_Z)=(.90,.01,.01,.08)$, exact enumeration gives ML successes $0.91983723$ for the reference orientation and $0.920436794$ for its local-Hadamard-at-site-zero version. They are Clifford-related but the noise orientation is held fixed.
+Under shared independent dephasing $p_I(t)=1-t$, $p_Z(t)=t$, a decoder chosen at $t=1/10$ has
+\[
+P_D(t)=(1-t)^3(6t^2+3t+1)=1-10t^3+15t^4-6t^5.
+\]
+\begin{proposition}This decoder remains ML for $0\le t\le 1/2$, and $\min_{0\le t\le1/4}P_{\rm ML}(t)=459/512$.\end{proposition}
+\begin{proof}
+The exact enumerated 16 syndrome winner-minus-competitor mass gaps are nonnegative throughout $[0,1/2]$. To certify this algebraically, put $t=u/[2(1+u)]$, $u\ge0$, and multiply every gap by $[2(1+u)]^5$. The resulting polynomial coefficient vectors (descending order) are $(10,40,80,80,32)$ once, $(6,24,32,16,0)$ five times, and $(2,8,8,0,0)$ ten times. They are all nonnegative for $u\ge0$; $t=1/2$ follows by direct evaluation. Hence $P_D=P_{\rm ML}$ throughout the interval. Moreover $P_D'(t)=-30t^2(1-t)^2\le0$, yielding $459/512$ at $t=1/4$.
+\end{proof}
+\section{Counterexamples and scope}
+For a single qubit with $\Pr(I)=t,\Pr(X)=1-t$, reoptimized success $\max(t,1-t)$ has its worst case at $t=1/2$, not at endpoints. Fixed-decoder success is multi-affine in separately uncertain site distributions, so its extrema over independent product polytopes occur at product vertices; the reoptimized objective need not. Tying two binary error probabilities to common $t$ gives parity-event success $(1-t)^2+t^2$ and an interior minimum. The parity case is illustrative and not asserted to be a separate stabilizer decoder.
+\section{Comparison, limitations and reproducibility}
+This idealized five-qubit note lacks circuit faults, noisy measurement, scaling benchmarks or an original algorithm. Molavi et al. already give constrained polynomial robustness, derivative pruning and a preliminary implementation artifact, inaccessible in the present evaluation. Cao et al. offer much broader quantum enumerators. Internal exact tests, including a 16-gap symbolic sign certificate and independent rational orientation enumeration, passed. Published external tools were not run, and the paper remains a \emph{provisional computational note} rather than a submission-ready original theorem.
+\begin{thebibliography}{9}
+\bibitem{cao} C. Cao, M. J. Gullans, B. Lackey, and Z. Wang. Quantum Lego Expansion Pack: Enumerators from Tensor Networks. \emph{PRX Quantum} 5, 030313 (2024). DOI:10.1103/PRXQuantum.5.030313.
+\bibitem{molavi} A. Molavi, F. Saad, and A. Albarghouthi. Analyzing Decoders for Quantum Error Correction. arXiv:2603.20127 (2026).
+\end{thebibliography}\end{document}
