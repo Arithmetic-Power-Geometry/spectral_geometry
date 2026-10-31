@@ -1,0 +1,13 @@
+# P109 — Exact one-site directional decoder-stability benchmark
+Date: 2026-10-31. Independently executed CPython 3 with exact fractions; 1024 Pauli strings per five-qubit code orientation. Noise at every site initially (I,X,Y,Z)=(.90,.01,.01,.08). Perturb one selected site only by transferring t probability from I to Z: (.90-t,.01,.01,.08+t), with physical t in [0,.90].
+## Theorem candidate
+For a fixed stabilizer code, syndrome-conditional logical-coset masses are affine functions of t if only one physical site's Pauli probabilities depend affinely on t. If each syndrome has a unique winner at t=0, for every losing coset define gap a+b t. The first positive decision tie occurs at min a/(-b) over b<0, restricted to physically admissible t. If no such root in the physical interval, the original decoder remains optimal over the entire interval. Strict stability holds for 0<=t<t_star; at t_star a tie occurs, not necessarily a strict change. Proof: multilinearity of product-channel event probabilities and elementary affine root analysis.
+## Exact independent calculations
+mask0 site0: threshold 30653/1041300 = .02943724190915202; P107 generic radius gamma/10 = .00019096819; ratio 154.147.
+mask1 site0: threshold 4249/208260 = .02040238163833669; P107 generic radius gamma/10 = .00013235635; ratio 154.147.
+mask28 site0: threshold 7097/18300 = .38781420765027325; P107 generic radius gamma/10 = .00027562794; ratio 1407.021.
+Code computes all 5 physical sites for each mask and asserts site0 exact fractions. Other-site thresholds appear in executable output. These are exact thresholds for one-site I-to-Z drift only, not general TV balls, all-site uncertainty or circuit-level noise.
+## Critical prior-art audit
+Molavi, Saad, Albarghouthi, Analyzing Decoders for Quantum Error Correction (2026), arXiv:2603.20127, studies polynomial decoder accuracy/robustness and constrained polynomial optimization, with multilinear optimization over hyperrectangles. This is strong overlapping prior art. The present one-site affine threshold is an elementary consequence of multilinearity, so mathematical correctness does not imply originality. P109 has not implemented or benchmarked the authors' algorithm; improvement relative to a loose P107 bound is NOT an improvement over the state of the art. Exact coset enumeration is exponential in n.
+## Writing decision
+A preliminary paper outline can be prepared now, but NOT a journal research manuscript claiming a novel theorem. Full manuscript after P110/P111 only if nontrivial contribution survives strongest-prior-art audit and scalable comparisons. If no novelty survives, pivot to a clearly labelled tutorial/technical note, not an original-research submission.
