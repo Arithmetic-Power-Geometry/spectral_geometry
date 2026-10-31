@@ -1,0 +1,5 @@
+# P117 method-level comparison
+Full text Molavi, Saad, Albarghouthi (2026), arXiv:2603.20127, examined. Their Section 6.1/Algorithm 2/Theorem 6.7 already provide constrained polynomial robustness, exact maximization over independently bounded error-rate hyperrectangles, partial derivative pruning, and algebraic cancellation. Their p.24 identifies a preliminary code/benchmark artifact: https://anonymous.4open.science/r/analyzing-decoders-8034/ . Access attempt unsuccessful; executable baseline not run.
+Cao, Gullans, Lackey, Wang (2024), PRX Quantum 5 030313 DOI 10.1103/PRXQuantum.5.030313 already develop quantum enumerators via tensor networks and optimal decoding. Their executable baseline not run.
+Our exact five-qubit enumerations and formal 16-gap common-dephasing proof are reproducible but don't show an original theorem or faster algorithm.
+P117: method-level comparison PASS; matched executable baseline NOT COMPLETED. No performance comparison claims.
