@@ -1,0 +1,15 @@
+# P107 — Certified stability theorem and exact five-qubit tests (2026-10-31)
+## Theorem (mathematically valid; novelty not established)
+Let S be an n-qubit stabilizer code with ideal syndrome measurement, p a single-qubit Pauli distribution, and M_(s,c)(p) the probability mass of syndrome s and logical coset c under independent p noise. Suppose for every syndrome the maximizer is unique, and define gamma = min_s [largest_c M_(s,c)(p) - second_largest_c M_(s,c)(p)] > 0. For any other single-qubit distribution q satisfying TV(p,q) < gamma/(2n), every maximizing logical coset remains unchanged. For a fixed decoder D, |P_success(D;p)-P_success(D;q)| <= n TV(p,q). For optimal success, the same Lipschitz bound holds.
+## Proof
+Couple independent one-site Pauli draws under p and q with disagreement probability delta=TV(p,q). Coupling n sites independently and union bounding gives probability at least 1-n delta that the full Pauli strings agree, hence TV(p^⊗n,q^⊗n) <= n delta. For every syndrome/logical-coset event, its probability changes by at most n delta. The difference between any winning and losing class can therefore decrease by at most 2n delta. If 2n delta < gamma, every winning class stays strictly ahead. Success of any fixed decoder is probability of an event in Pauli-string space, so obeys the same bound. Optimal success is the maximum over finitely many fixed decoder successes, hence is also n-Lipschitz in TV. QED.
+## Exact rational certificates
+Noise p=(I,X,Y,Z)=(90,1,1,8)/100; five-qubit perfect code generators XZZXI, IXZZX, XIXZZ, ZXIXZ, with local Hadamard masks.
+mask 0: success 91983723/100000000, gamma 19096819/10000000000, strict TV radius 19096819/100000000000.
+mask 1: success 460218397/500000000, gamma 2647127/2000000000, strict TV radius 2647127/20000000000.
+mask 28: success 2316216227/2500000000, gamma 13781397/5000000000, strict TV radius 13781397/50000000000.
+All calculated by enumerating 1024 Pauli errors per mask, exact Fraction probabilities, 16 syndrome classes and 4 logical cosets per syndrome. The radius is conservative and requires an exact gamma; computing gamma exhaustively is exponential in n in general.
+## Novelty kill-test
+The TV coupling/union bound is elementary, and exact maximum-likelihood decoding is established. Molavi, Saad and Albarghouthi, Analyzing Decoders for Quantum Error Correction (2026), treats decoder robustness as polynomial optimization; bibliographic details not yet fully verified. Gottesman quantum error correction course notes (2024), chapter 3.4.3, give exact optimal coset decoding. Therefore P107 is a valid proved theorem candidate and reproducible certificate but not an established novel contribution.
+## Next research gate
+Investigate sparse local noise uncertainty and syndrome-conditioned bounds tighter than n TV, scalable certificates and adversarial comparisons with existing robustness solvers; test on non-LC-equivalent matched codes. Publication NO-GO until original nontrivial theorem and baseline superiority verified.
