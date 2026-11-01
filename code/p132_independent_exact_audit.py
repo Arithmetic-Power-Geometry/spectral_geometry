@@ -21,7 +21,7 @@ by={j:sorted((k,s.expand(v)) for (sy,k),v in m.items() if sy==j) for j in range(
 assert all(len(v)==2 for v in by.values())
 base=s.expand(sum(by[j][0][1] for j in range(16)))
 diff=[s.expand(by[j][1][1]-by[j][0][1]) for j in range(16)]
-fixed={j:int(diff[j].subs(t,s.Rational(1,4))>0) for j in range(16) if diff[j].subs(t,s.Rational(1,4))!=0}
+fixed={j:(1 if diff[j].subs(t,s.Rational(1,4))>0 else 0) for j in range(16) if diff[j].subs(t,s.Rational(1,4))!=0}
 free=[j for j in range(16) if j not in fixed]
 assert len(free)==8
 candidates={}
@@ -49,6 +49,18 @@ assert not [(a,b) for (a,b),mult in s.polys.polytools.intervals(s.Poly(F-q,t),ep
 assert s.Rational(11,16)<q
 roots=[(a,b) for (a,b),mult in s.polys.polytools.intervals(s.Poly(s.diff(F,t),t),eps=s.Rational(1,10**15)) if a>0 and b<s.Rational(1,2)]
 assert len(roots)==2
+# Recheck the archived machine-readable witness certificate, if present.
+import json
+from pathlib import Path
+certificate=Path(__file__).resolve().parents[1]/'evidence'/'deterministic_witnesses.json'
+if certificate.exists():
+ data=json.loads(certificate.read_text(encoding='utf-8'))
+ assert data['competing_polynomial_count']==20
+ assert data['threshold']=='749591/1000000'
+ assert len(data['exclusion_witnesses'])==20
+ assert {r['polynomial']:r['t'] for r in data['exclusion_witnesses']}==witnesses
+ for r in data['exclusion_witnesses']:
+  assert s.sympify(r['polynomial']).subs(t,s.Rational(r['t']))<q
 print("PASS 256 decoders / 21 polynomials / 20 rational witnesses")
 print("Optimal polynomial",F)
 print("Choice",candidates[s.factor(F)])
