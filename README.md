@@ -4,7 +4,7 @@ Reproducibility materials accompanying *Exact Robustness Certificates for Five-Q
 
 ## Scope
 
-This repository version supports the five-qubit [[5,1,3]] and Steane [[7,1,3]] exact finite-code results under ideal syndrome extraction. The 128-row Steane dataset is an exhaustive **synthetic** enumeration, not hardware data. No large-code runtime or external-decoder performance superiority is claimed.
+This repository supports the five-qubit [[5,1,3]] and Steane [[7,1,3]] exact finite-code results under ideal syndrome extraction. The 128-row Steane dataset is an exhaustive **synthetic** enumeration, not hardware data. No large-code runtime or external-decoder performance superiority is claimed.
 
 ## Reproduce
 
@@ -37,8 +37,8 @@ The Steane result certifies `R_det < 0.4999 < R_rand = R_ML = 1/2` for rates `(t
 
 The five-qubit heterogeneous result certifies the deterministic optimum approximately `0.74959189859249` and randomized optimum `3/4` for rates `(t,t,2t,2t,2t)`.
 
-## Journal version
+## Reproducibility scope
 
-`submitted_manuscript.pdf` is the author-supplied manuscript version for repository matching. The accompanying Python files and evidence are from the final local submission package. Check the PDF and release hashes before sharing a version-specific link with the journal.
+The repository contains the executable verification programs and machine-readable evidence associated with the paper. The manuscript, editorial drafts, and author instructions are not included. The numerical MILP check is exploratory; exact certificate claims rely on the independent symbolic and rational-witness audits described above.
 
 Copyright © 2026 Mohammad Amir Khusru Akhtar. Apache License 2.0 applies to original software; third-party dependencies retain their own licenses.
