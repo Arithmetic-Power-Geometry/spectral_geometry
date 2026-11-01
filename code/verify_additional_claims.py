@@ -23,11 +23,11 @@ f=1-10*t**3+15*t**4-6*t**5
 assert s.expand(sum(max(pair,key=lambda x:x[1].subs(t,s.Rational(1,10)))[1] for pair in H.values())-f)==0
 C=masses([t,t,2*t,2*t,2*t])
 assert sum(max(pair,key=lambda x:x[1].subs(t,s.Rational(1,4)))[1].subs(t,s.Rational(1,4)) for pair in C.values())==s.Rational(3,4)
-# Explicit randomized choice in the nominal winner/rival ordering at t=1/10.
+# Nominal winners are defined by the homogeneous t=1/10 reference channel.
 nominal={}
 for j,pair in C.items():
  a,b=pair
- nominal[j]=(a,b) if a[1].subs(t,s.Rational(1,10))>=b[1].subs(t,s.Rational(1,10)) else (b,a)
+ nominal[j]=(a,b) if next(v for k,v in H[j] if k==a[0]).subs(t,s.Rational(1,10))>=next(v for k,v in H[j] if k==b[0]).subs(t,s.Rational(1,10)) else (b,a)
 chosen={0,2,4,6,9,11,13}
 R=s.expand(sum(nominal[j][0 if j in chosen else 1][1] for j in range(16) if j!=14)
  +s.Rational(2,3)*nominal[14][0][1]+s.Rational(1,3)*nominal[14][1][1])
