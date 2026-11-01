@@ -1,32 +1,44 @@
-# Five-Qubit Robust Stabilizer Decoding — Reproducibility Code
+# Exact Robustness Certificates for Five-Qubit Stabilizer Decoding
 
-Exact arithmetic for the results in:
-
-Akhtar, M. A. K. (2026). *Exact Robustness Certificates for Five-Qubit Stabilizer Decoding: Decoder Switching and a Deterministic–Randomized Minimax Separation* (Version V1). Zenodo. https://doi.org/10.5281/zenodo.23853848
-
-## Requirements
-
-Python 3.10+ and SymPy.
-
-```bash
-python -m pip install sympy
-python code/p127_two_parameter_dephasing.py
-python code/p128_exact_switching.py
-python code/p132_independent_exact_audit.py
-python code/verify_additional_claims.py
-```
-
-All checks use symbolic or exact rational arithmetic. No random seeds or external datasets are needed.
+Reproducibility materials accompanying *Exact Robustness Certificates for Five-Qubit Stabilizer Decoding: Decoder Switching and a Deterministic–Randomized Minimax Separation* (Mohammad Amir Khusru Akhtar, 2026).
 
 ## Scope
 
-- `p127_two_parameter_dephasing.py`: two-parameter syndrome–coset masses and nominal decoder change.
-- `p128_exact_switching.py`: coupled-family switching roots and per-syndrome audit.
-- `p132_independent_exact_audit.py`: 256 deterministic candidates, 21 polynomials, 20 exact rational witnesses, and stationary points. Its output contains the rational witnesses and verifies `evidence/deterministic_witnesses.json`.
-- `verify_additional_claims.py`: homogeneous polynomial, coupled-family randomized certificate, adaptive upper bound, and orientation test.
+This repository version supports the five-qubit [[5,1,3]] and Steane [[7,1,3]] exact finite-code results under ideal syndrome extraction. The 128-row Steane dataset is an exhaustive **synthetic** enumeration, not hardware data. No large-code runtime or external-decoder performance superiority is claimed.
 
-The exclusion certificates are stored in `evidence/deterministic_witnesses.json` and independently rechecked by the deterministic script. The homogeneous-reference nominal decoder is used for the randomized recovery construction.
+## Reproduce
 
-The code assumes ideal syndrome extraction and independent Pauli errors conditional on the noise parameter. It is a small-code exact certificate, not a scalable quantum decoder. The Zenodo article is the scholarly reference; this repository contains reproduction software only.
+Requires Python 3.10+ and SymPy. From the repository root:
 
-Copyright © 2026 Mohammad Amir Khusru Akhtar. Licensed under Apache License 2.0.
+```bash
+python -m pip install sympy
+python code/orientation_exact.py
+python code/p129.py
+python code/p130.py
+python code/p131_verify.py
+python code/p132_audit.py
+python code/switching_independent_audit.py
+python code/verify_steane_css.py
+python code/verify_steane_heterogeneous.py
+```
+
+`p131_verify.py` is an exploratory numerical check and **not** the final optimality certificate; use `p132_audit.py` for the exact five-qubit deterministic optimum.
+
+## Certificates and data
+
+- `evidence/deterministic_witnesses.json`: 20 rational exclusion witnesses for the five-qubit case.
+- `evidence/steane_heterogeneous_witnesses.json`: 40 rational exclusion witnesses for the strict Steane heterogeneous gap.
+- `evidence/steane_128_error_patterns.csv`: all 128 supported pure-Z Steane errors, generated symbolically.
+- `evidence/syndrome_switching_audit.json` and `.csv`: switching checks.
+- `evidence/final_reproducibility_report.json`: earlier local verification record; not a GitHub release audit.
+- `SHA256SUMS.txt`: SHA-256 checksums for files in this package.
+
+The Steane result certifies `R_det < 0.4999 < R_rand = R_ML = 1/2` for rates `(t,t,t,t,2t,2t,2t)`, `0 <= t <= 1/2`; it does not establish the exact Steane deterministic optimum.
+
+The five-qubit heterogeneous result certifies the deterministic optimum approximately `0.74959189859249` and randomized optimum `3/4` for rates `(t,t,2t,2t,2t)`.
+
+## Journal version
+
+`submitted_manuscript.pdf` is the author-supplied manuscript version for repository matching. The accompanying Python files and evidence are from the final local submission package. Check the PDF and release hashes before sharing a version-specific link with the journal.
+
+Copyright © 2026 Mohammad Amir Khusru Akhtar. Apache License 2.0 applies to original software; third-party dependencies retain their own licenses.
