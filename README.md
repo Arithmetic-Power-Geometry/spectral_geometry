@@ -22,8 +22,10 @@ All checks use symbolic or exact rational arithmetic. No random seeds or externa
 
 - `p127_two_parameter_dephasing.py`: two-parameter syndrome–coset masses and nominal decoder change.
 - `p128_exact_switching.py`: coupled-family switching roots and per-syndrome audit.
-- `p132_independent_exact_audit.py`: 256 deterministic candidates, 21 polynomials, 20 exact rational witnesses, and stationary points. Its output contains the rational witnesses.
+- `p132_independent_exact_audit.py`: 256 deterministic candidates, 21 polynomials, 20 exact rational witnesses, and stationary points. Its output contains the rational witnesses and verifies `evidence/deterministic_witnesses.json`.
 - `verify_additional_claims.py`: homogeneous polynomial, coupled-family randomized certificate, adaptive upper bound, and orientation test.
+
+The exclusion certificates are stored in `evidence/deterministic_witnesses.json` and independently rechecked by the deterministic script. The homogeneous-reference nominal decoder is used for the randomized recovery construction.
 
 The code assumes ideal syndrome extraction and independent Pauli errors conditional on the noise parameter. It is a small-code exact certificate, not a scalable quantum decoder. The Zenodo article is the scholarly reference; this repository contains reproduction software only.
 
