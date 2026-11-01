@@ -1,0 +1,19 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite the associated research article."
+title: "Exact Robustness Certificates for Five-Qubit Stabilizer Decoding: Decoder Switching and a Deterministic–Randomized Minimax Separation"
+type: software
+authors:
+  - family-names: Akhtar
+    given-names: Mohammad Amir Khusru
+    orcid: null
+license: Apache-2.0
+repository-code: https://github.com/Arithmetic-Power-Geometry/spectral_geometry
+preferred-citation:
+  type: article
+  title: "Exact Robustness Certificates for Five-Qubit Stabilizer Decoding: Decoder Switching and a Deterministic–Randomized Minimax Separation"
+  authors:
+    - family-names: Akhtar
+      given-names: Mohammad Amir Khusru
+  year: 2026
+  doi: 10.5281/zenodo.23853848
+  url: https://doi.org/10.5281/zenodo.23853848

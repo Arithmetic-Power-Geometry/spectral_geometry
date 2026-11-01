@@ -1,2 +1,0 @@
-# P134 manuscript source preparation
-The revised LaTeX manuscript is being prepared from the user's original eight-page PDF (main (65).pdf) and the append-only P127–P133 evidence. The original PDF is the textual basis; the newly added coupled-family theorems are sourced to P127–P132. Claims about prior art are scoped conservatively. The manuscript is not declared accepted or guaranteed error-free. All original numerical results should be checked in the packaged exact scripts before journal submission.

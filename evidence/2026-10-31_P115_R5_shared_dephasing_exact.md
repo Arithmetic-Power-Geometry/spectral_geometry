@@ -1,5 +1,0 @@
-# P115-R5 exact shared-parameter fixed-decoder certificate
-
-Five-qubit [[5,1,3]] generators XZZXI, IXZZX, XIXZZ, ZXIXZ. Independent dephasing with a single tied parameter t at all five sites: pI=1-t, pZ=t, pX=pY=0. Exact enumeration of 2^5 error strings, syndromes and stabilizer cosets. Choose one maximum-likelihood syndrome decoder at t=1/10. Exact success polynomial: (1-t)^3*(6*t^2+3*t+1). At t=1/10: 12393/12500; at t=1/4: 459/512. Derivative -30*t^2*(t-1)^2, so minimum on [0,1/4] is 459/512. Exact normalization and nominal ML assertions passed; derivative-root isolation performed using SymPy.
-
-Scope: fixed nominal decoder only. Does not establish that this decoder remains ML for every t, or the minimum of the reoptimized ML success. This is a concrete stabilizer-code demonstration of constrained polynomial optimization, already addressed in broader form by Molavi, Saad, Albarghouthi (2026), Analyzing Decoders for Quantum Error Correction, arXiv:2603.20127, DOI 10.48550/arXiv.2603.20127. No comparative execution or originality established. Publication gate: technical demonstration PASS; original central theorem NO-GO.

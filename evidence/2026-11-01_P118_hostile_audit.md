@@ -1,7 +1,0 @@
-# P118 hostile correctness and originality review
-This is an internal adversarial audit, NOT an independent external referee report.
-Major finding: theorem originality NO-GO. Molavi 2026 directly overlaps polynomial decoder robustness; Cao 2024 precedes exact enumerator decoding.
-Repaired earlier R6 proof reliance on symbolic root checks: for every syndrome gap G_s(t), substitute t=u/(2(1+u)) and multiply by (2(1+u))^5. The 16 transformed polynomials have descending coefficients: (10,40,80,80,32), multiplicity 1; (6,24,32,16,0), multiplicity 5; (2,8,8,0,0), multiplicity 10. Every coefficient is nonnegative and t=1/2 checked, proving the claimed interval.
-Internal tests passed: separate Fraction-based two-orientation full-Pauli enumeration, symbolic dephasing polynomial and derivative, and all 16 positive coefficient certificates.
-Unresolved: published software artifact inaccessible, no equivalent-input benchmark against Molavi or Cao, only small idealized code, no circuit-level noisy syndrome, insufficient independent external review, only two primary cited papers.
-P116 PASS provisional manuscript; P117 PARTIAL published methods covered but executable baseline not performed; P118 PASS internal hostile audit with proof correction. Overall NO-GO for new theorem/method submission; computational note may be viable after broader editing and venue fit.

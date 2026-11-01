@@ -1,9 +1,30 @@
-# Spectral Geometry Research Programme
+# Five-Qubit Robust Stabilizer Decoding — Reproducibility Code
 
-Mathematical-first research into inverse spectral reconstruction, rigidity, non-identifiability, exact certificates, Narain compactifications, and carefully gated quantum-code applications.
+Exact arithmetic for the results in:
 
-**Status (2026-10-30):** programme initiated; no new theorem or publication GO claimed.
+Akhtar, M. A. K. (2026). *Exact Robustness Certificates for Five-Qubit Stabilizer Decoding: Decoder Switching and a Deterministic–Randomized Minimax Separation* (Version V1). Zenodo. https://doi.org/10.5281/zenodo.23853848
 
-Start with [MASTER_BLUEPRINT.md](MASTER_BLUEPRINT.md). Three source manuscripts supplied by the researcher are inventoried in `papers/source_manuscripts/MANIFEST.md`; original PDF binaries are not yet uploaded to this repository. Do not confuse this source inventory with a verified upload.
+## Requirements
 
-**Permanent protocol:** Every research prompt must inspect the current main branch, audit prior work, append timestamped positive and negative evidence in `evidence/`, append only verified bibliography entries to `reference/reference.bib` and the verification register, preserve theorem/test provenance, add associated new paper artifacts to `papers/`, commit changes, then independently verify commit and file contents. If a step cannot be committed, report it explicitly. Never silently delete previous evidence or fabricate citations.
+Python 3.10+ and SymPy.
+
+```bash
+python -m pip install sympy
+python code/p127_two_parameter_dephasing.py
+python code/p128_exact_switching.py
+python code/p132_independent_exact_audit.py
+python code/verify_additional_claims.py
+```
+
+All checks use symbolic or exact rational arithmetic. No random seeds or external datasets are needed.
+
+## Scope
+
+- `p127_two_parameter_dephasing.py`: two-parameter syndrome–coset masses and nominal decoder change.
+- `p128_exact_switching.py`: coupled-family switching roots and per-syndrome audit.
+- `p132_independent_exact_audit.py`: 256 deterministic candidates, 21 polynomials, 20 exact rational witnesses, and stationary points. Its output contains the rational witnesses.
+- `verify_additional_claims.py`: homogeneous polynomial, coupled-family randomized certificate, adaptive upper bound, and orientation test.
+
+The code assumes ideal syndrome extraction and independent Pauli errors conditional on the noise parameter. It is a small-code exact certificate, not a scalable quantum decoder. The Zenodo article is the scholarly reference; this repository contains reproduction software only.
+
+Copyright © 2026 Mohammad Amir Khusru Akhtar. Licensed under Apache License 2.0.
