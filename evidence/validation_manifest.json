@@ -1,0 +1,35 @@
+{
+  "checks": {
+    "scripts_passed": 5,
+    "bibliography_entries": 26,
+    "all_cited": true,
+    "referenced_labels": 20,
+    "unresolved_references": 0,
+    "overfull_hboxes": 0,
+    "rational_witnesses": 20
+  },
+  "sha256": {
+    "README.md": "a79d84e9206f2a26e8dbc44a77223128870a59a7a8cda21c8cbb27dda72ceac4",
+    "code/orientation_exact.py": "c40707805c2d032f5b600d665f038adff23f172ed56915cb7de01e6a517e6df2",
+    "code/p129.py": "519dbcefbfc9ae9a30f8aee48df5bc988c5b3d823f0c2ce0b7ca4f21b08e03ec",
+    "code/p130.py": "e8dc7baf7db2d0ab753bb5fdc36cbfd88cd102683289f08857c29ebe2cdd71d2",
+    "code/p131_verify.py": "7c4fafb39c6fd8481f4962c76aaeae432115698ce537530ee29da73b6a780c3d",
+    "code/p132_audit.py": "d02d7b9f48902408421e7ccba586f61625c2be7271204fb9b05d48e9693ef791",
+    "evidence/deterministic_witnesses.json": "604b41916333e0ef4e1aaa89bbc2e2763cc66da99c32010c78921bccf98371be",
+    "evidence/orientation_exact_final_run.txt": "8caae749915b03c563ec32c342c9b847e5bf9b9aaaf446e0b1ffc05ae6ea4254",
+    "evidence/orientation_run.txt": "8caae749915b03c563ec32c342c9b847e5bf9b9aaaf446e0b1ffc05ae6ea4254",
+    "evidence/p129_final_run.txt": "dc29a89f14085ff50ccd51822626b87ce6b65de508870c9004605db7c19e9624",
+    "evidence/p129_run.txt": "dc29a89f14085ff50ccd51822626b87ce6b65de508870c9004605db7c19e9624",
+    "evidence/p130_final_run.txt": "fe0b402f43a26d3480cd79c29f403e9a3439330bbac152cf12d3c6bb5c65627d",
+    "evidence/p130_run.txt": "fe0b402f43a26d3480cd79c29f403e9a3439330bbac152cf12d3c6bb5c65627d",
+    "evidence/p131_run.txt": "54a75ba600365dcaa58bb3e1b270e65ca7ba4ddd71263fdfcdde4bf924aa6049",
+    "evidence/p131_verify_final_run.txt": "54a75ba600365dcaa58bb3e1b270e65ca7ba4ddd71263fdfcdde4bf924aa6049",
+    "evidence/p132_audit_final_run.txt": "ccbcaa0d4ff4e253ec19b7c9478b22cf0a01987807683b8e9a8e7dc328b4f202",
+    "evidence/p132_audit_log.txt": "8990e586bdfc9c1ff5bd5d2b3d09f265f5577c2aec11a650faf36eb67f4d0197",
+    "evidence/p132_reverified_stdout.txt": "ccbcaa0d4ff4e253ec19b7c9478b22cf0a01987807683b8e9a8e7dc328b4f202",
+    "evidence/p132_run.txt": "ccbcaa0d4ff4e253ec19b7c9478b22cf0a01987807683b8e9a8e7dc328b4f202",
+    "evidence/verification_log.txt": "54a75ba600365dcaa58bb3e1b270e65ca7ba4ddd71263fdfcdde4bf924aa6049",
+    "main.pdf": "953ed25748de0bd8c8e2ab676829088783697f46d340cd6989b536387e3b8079",
+    "main.tex": "6dd5c6763be98b7e87d801255385ea585f3761637367f490330563dccd133119"
+  }
+}

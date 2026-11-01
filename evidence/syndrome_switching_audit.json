@@ -1,0 +1,195 @@
+{
+  "method": "Exact SymPy polynomial root isolation for all 16 syndrome winner-rival gaps on 0<t<1/2",
+  "syndromes": [
+    {
+      "syndrome_integer": 0,
+      "syndrome_binary": "0000",
+      "nominal_winner_key": 0,
+      "gap_polynomial": "-16*t**5 + 28*t**4 - 38*t**3 + 25*t**2 - 8*t + 1",
+      "interior_roots": [
+        {
+          "lower": "430307/1371400",
+          "upper": "561764/1790357",
+          "approx": 0.3137720577514068
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 1,
+      "syndrome_binary": "0001",
+      "nominal_winner_key": 5,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 2,
+      "syndrome_binary": "0010",
+      "nominal_winner_key": 16,
+      "gap_polynomial": "2*t*(2*t - 1)*(4*t**3 - 5*t**2 + 4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "305967/824771",
+          "upper": "526097/1418158",
+          "approx": 0.3709720637611562
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 3,
+      "syndrome_binary": "0011",
+      "nominal_winner_key": 10,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 4,
+      "syndrome_binary": "0100",
+      "nominal_winner_key": 4,
+      "gap_polynomial": "2*t*(2*t - 1)*(4*t**3 - 5*t**2 + 4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "305967/824771",
+          "upper": "526097/1418158",
+          "approx": 0.3709720637611562
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 5,
+      "syndrome_binary": "0101",
+      "nominal_winner_key": 1,
+      "gap_polynomial": "t*(t - 1)*(4*t - 1)*(4*t**2 - 2*t + 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 6,
+      "syndrome_binary": "0110",
+      "nominal_winner_key": 20,
+      "gap_polynomial": "-2*t**2*(2*t - 1)*(4*t**2 - 5*t + 2)",
+      "interior_roots": []
+    },
+    {
+      "syndrome_integer": 7,
+      "syndrome_binary": "0111",
+      "nominal_winner_key": 17,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 8,
+      "syndrome_binary": "1000",
+      "nominal_winner_key": 18,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 9,
+      "syndrome_binary": "1001",
+      "nominal_winner_key": 8,
+      "gap_polynomial": "2*t*(2*t - 1)*(4*t**3 - 5*t**2 + 4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "305967/824771",
+          "upper": "526097/1418158",
+          "approx": 0.3709720637611562
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 10,
+      "syndrome_binary": "1010",
+      "nominal_winner_key": 2,
+      "gap_polynomial": "t*(t - 1)*(4*t - 1)*(4*t**2 - 2*t + 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 11,
+      "syndrome_binary": "1011",
+      "nominal_winner_key": 24,
+      "gap_polynomial": "-2*t**2*(2*t - 1)*(4*t**2 - 5*t + 2)",
+      "interior_roots": []
+    },
+    {
+      "syndrome_integer": 12,
+      "syndrome_binary": "1100",
+      "nominal_winner_key": 9,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 13,
+      "syndrome_binary": "1101",
+      "nominal_winner_key": 12,
+      "gap_polynomial": "-2*t**2*(2*t - 1)*(4*t**2 - 5*t + 2)",
+      "interior_roots": []
+    },
+    {
+      "syndrome_integer": 14,
+      "syndrome_binary": "1110",
+      "nominal_winner_key": 6,
+      "gap_polynomial": "-2*t**2*(t - 1)*(2*t - 1)*(4*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "1/4",
+          "upper": "1/4",
+          "approx": 0.25
+        }
+      ]
+    },
+    {
+      "syndrome_integer": 15,
+      "syndrome_binary": "1111",
+      "nominal_winner_key": 3,
+      "gap_polynomial": "-t**2*(16*t**3 - 28*t**2 + 14*t - 1)",
+      "interior_roots": [
+        {
+          "lower": "544405/6385366",
+          "upper": "15351/180053",
+          "approx": 0.08525822952087272
+        }
+      ]
+    }
+  ]
+}
