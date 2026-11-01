@@ -5,7 +5,6 @@ type: software
 authors:
   - family-names: Akhtar
     given-names: Mohammad Amir Khusru
-    orcid: null
 license: Apache-2.0
 repository-code: https://github.com/Arithmetic-Power-Geometry/spectral_geometry
 preferred-citation:
